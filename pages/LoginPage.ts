@@ -4,6 +4,7 @@ export class LoginPage {
     readonly username;
     readonly password;
     readonly loginButton;
+    readonly forgotPasswordLink;
     readonly invalidCredentialsAlert;
     readonly requiredMessages;
 
@@ -11,6 +12,7 @@ export class LoginPage {
         this.username = page.getByRole('textbox', { name: 'Username' });
         this.password = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Login' });
+        this.forgotPasswordLink = page.getByText('Forgot your password?', { exact: true });
         this.invalidCredentialsAlert = page.getByRole('alert');
         this.requiredMessages = page.getByText('Required', { exact: true });
     }
@@ -23,6 +25,15 @@ export class LoginPage {
         await this.username.fill(username);
         await this.password.fill(password);
         await this.loginButton.click();
+    }
+
+    async openForgotPassword() {
+        await this.forgotPasswordLink.click();
+    }
+
+    async expectForgotPasswordPage() {
+        await expect(this.page).toHaveURL(/\/web\/index\.php\/auth\/requestPasswordResetCode$/);
+        await expect(this.page.getByRole('heading', { name: 'Reset Password' })).toBeVisible();
     }
 
     async expectDashboard() {

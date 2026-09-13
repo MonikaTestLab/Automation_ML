@@ -24,3 +24,11 @@ test('empty credentials show required field errors', async ({ page }) => {
     await loginPage.login('', '');
     await loginPage.expectRequiredFieldErrors();
 });
+
+test('forgot password opens the password reset page', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+
+    await loginPage.goto();
+    await loginPage.openForgotPassword();
+    await loginPage.expectForgotPasswordPage();
+});
