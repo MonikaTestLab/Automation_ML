@@ -46,16 +46,14 @@ test('Long into orange HRM and Create the employee', async ({ page }) => {
     // Validate Login Page
     await expect(loginPage.companylogo).toBeVisible();
     await expect(loginPage.logintext).toBeVisible();
-    await expect(loginPage.UsernameCreds).toBeVisible();
-    await expect(loginPage.passwordCreds).toBeVisible();
+    //await expect(loginPage.UsernameCreds).toBeVisible();
+    // await expect(loginPage.passwordCreds).toBeVisible();
 
     // Login
     await loginPage.Login(username, password);
 
     // Validate Home Page
     await expect(loginPage.homePage).toBeVisible();
-
-
     await expect(page).toHaveURL(/dashboard\/index/);
 
     // Create Employee

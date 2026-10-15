@@ -1,7 +1,6 @@
 import { Page } from '@playwright/test'
 
 export class Loginpage {
-
     readonly username;
     readonly password;
     readonly loginButton;
@@ -28,6 +27,5 @@ export class Loginpage {
         await this.loginButton.click();
 
     }
-
 
 }

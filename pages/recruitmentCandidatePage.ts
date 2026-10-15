@@ -41,7 +41,7 @@ export class RecruitmentCandidatePage {
         this.selectVacancyXpath = this.page.locator('(//div[@class="oxd-select-text oxd-select-text--active"])[2]');
         this.selectVacancyFromDropDown = this.page.getByRole('option', { name: 'Senior QA Lead' }).first();
         this.selectHiringManager = this.page.locator('(//div[@class="oxd-select-text oxd-select-text--active"])[3]');
-        this.selectManagerFromDropDown = this.page.getByRole('option', { name: 'manda user' });
+        this.selectManagerFromDropDown = this.page.getByRole('option', { name: 'Rahul Patil' });
         this.selectStatusXpath = this.page.locator('(//div[@class="oxd-select-text oxd-select-text--active"])[4]');
         this.selectStatusfromdropDown = this.page.getByRole('option', { name: 'Shortlisted' }).first();
         this.selectCandidateName = this.page.locator('//input[@placeholder="Type for hints..."]');

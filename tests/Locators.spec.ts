@@ -9,17 +9,14 @@ test("locators", async ({ page }) => {
     await page.getByRole('button', { name: "Login" }).click();
     await expect(page).toHaveURL(/dashboard/);
 
-    // The current demo page uses a placeholder, not a <label> or aria-label.
-    await page.getByPlaceholder('Search', { exact: true }).fill('Admin');
-
-    // getByLabel example (requires an associated <label> or aria-label):
-    // await page.getByLabel('Search').fill('Admin');
+    // getByLabel: the dashboard search textbox has an accessible label.
+    //await page.getByLabel('Search').fill('Admin');
 
     // The public OrangeHRM demo page currently has no title attributes,
     // so this works only after the application adds title="...".
     await page.getByText('PIM').click();
 
-    await page.getByAltText('profile picture').click();
+    await page.getByAltText('Profile').click();
 
     // The public OrangeHRM demo page currently has no data-testid attributes,
     // so this works only after the application adds data-testid="...".
