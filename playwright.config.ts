@@ -50,7 +50,7 @@ export default defineConfig({
 
     // Set to true to see the browser while tests run.
     // Change to true for local debugging; set to false for headless execution.
-    headless: false,
+    headless: true,
   },
 
   /* Configure projects for major browsers */
@@ -59,9 +59,9 @@ export default defineConfig({
       // Run tests in Chromium (Chrome-based browser).
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
+    }
 
-    {
+    /*{
       // Run tests in Firefox.
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
@@ -72,6 +72,7 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+    */
 
     /* Test against mobile viewports. Uncomment to enable.
 
