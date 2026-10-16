@@ -1,6 +1,6 @@
 import { test, expect, firefox } from '@playwright/test';
 
-import { Loginpage } from '../pages/loginpage';
+import { Loginpage } from '../pages/loginnnpage';
 
 test('browser context practice', async ({ }) => {
     // Create a new browser 

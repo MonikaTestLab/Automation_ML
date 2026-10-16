@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { Loginpage } from '../pages/loginpage';
+import { Loginpage } from '../pages/loginnnpage';
 import dotenv from 'dotenv';
 
 let loginpage: Loginpage
